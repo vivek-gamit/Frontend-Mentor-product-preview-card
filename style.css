@@ -1,0 +1,140 @@
+/* ----- Reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Page Layout ----- */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(30, 38%, 92%); /* light beige background */
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  padding: 1.5rem;
+}
+
+/* ----- Card ----- */
+.card {
+  max-width: 640px;
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Image section */
+.card__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Content section */
+.card__content {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+.card__tag {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.75rem;
+  color: hsl(228, 12%, 48%);
+  margin-bottom: 0.75rem;
+}
+
+.card__title {
+  font-family: "Fraunces", serif;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  color: hsl(212, 21%, 14%);
+  margin-bottom: 1rem;
+}
+
+.card__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: hsl(228, 12%, 48%);
+  margin-bottom: 1.5rem;
+}
+
+/* Prices */
+.card__prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__price--current {
+  font-family: "Fraunces", serif;
+  font-size: 1.9rem;
+  color: hsl(158, 36%, 37%);
+}
+
+.card__price--old {
+  font-size: 0.9rem;
+  color: hsl(228, 12%, 60%);
+  text-decoration: line-through;
+}
+
+/* Button */
+.card__button {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.6rem;
+  padding: 0.9rem 1.2rem;
+  background: hsl(158, 36%, 37%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.card__button:hover {
+  background: hsl(158, 36%, 25%);
+  transform: translateY(-1px);
+}
+
+.card__button:active {
+  transform: translateY(0);
+}
+
+.card__button-icon {
+  font-size: 1rem;
+}
+
+/* ----- Responsive (Desktop) ----- */
+@media (min-width: 720px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__content {
+    padding: 2rem;
+  }
+
+  .card__title {
+    font-size: 2rem;
+  }
+
+  .card__description {
+    font-size: 0.95rem;
+  }
+}
